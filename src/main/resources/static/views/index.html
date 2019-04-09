@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Main Page</title>
+</head>
+<body ng-app="app">
+<h1>Mancala Game</h1>
+<hr/>
+<div class="container" ng-controller="controller">
+    <div class="row">
+        <button ng-click="restart()" class="btn btn-lg btn-info">Restart</button>
+    </div>
+    <hr/>
+    <div class="row">
+        <h3>Player 2: {{player2.message}}</h3>
+    </div>
+    <div class="row">
+        <table>
+            <tr>
+                <th rowspan="2"><h2>{{player2.bigPit}}</h2></th>
+                <td><button ng-disabled="!player2.myTurn" ng-click="move(5)" class="btn btn-lg btn-info">{{player2.pits[5]}}</button></td>
+                <td><button ng-disabled="!player2.myTurn" ng-click="move(4)" class="btn btn-lg btn-info">{{player2.pits[4]}}</button></td>
+                <td><button ng-disabled="!player2.myTurn" ng-click="move(3)" class="btn btn-lg btn-info">{{player2.pits[3]}}</button></td>
+                <td><button ng-disabled="!player2.myTurn" ng-click="move(2)" class="btn btn-lg btn-info">{{player2.pits[2]}}</button></td>
+                <td><button ng-disabled="!player2.myTurn" ng-click="move(1)" class="btn btn-lg btn-info">{{player2.pits[1]}}</button></td>
+                <td><button ng-disabled="!player2.myTurn" ng-click="move(0)" class="btn btn-lg btn-info">{{player2.pits[0]}}</button></td>
+                <th rowspan="2"><h2>{{player1.bigPit}}</h2></th>
+            </tr>
+            <tr>
+                <td><button ng-disabled="!player1.myTurn" ng-click="move(0)" class="btn btn-lg btn-info">{{player1.pits[0]}}</button></td>
+                <td><button ng-disabled="!player1.myTurn" ng-click="move(1)" class="btn btn-lg btn-info">{{player1.pits[1]}}</button></td>
+                <td><button ng-disabled="!player1.myTurn" ng-click="move(2)" class="btn btn-lg btn-info">{{player1.pits[2]}}</button></td>
+                <td><button ng-disabled="!player1.myTurn" ng-click="move(3)" class="btn btn-lg btn-info">{{player1.pits[3]}}</button></td>
+                <td><button ng-disabled="!player1.myTurn" ng-click="move(4)" class="btn btn-lg btn-info">{{player1.pits[4]}}</button></td>
+                <td><button ng-disabled="!player1.myTurn" ng-click="move(5)" class="btn btn-lg btn-info">{{player1.pits[5]}}</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <h3>Player 1: {{player1.message}}</h3>
+    </div>
+</div>
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/controller.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/app/app.css"/>
+</html>
